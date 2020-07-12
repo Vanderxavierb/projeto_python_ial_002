@@ -2,7 +2,7 @@
 """
 Created on Fri Jul 10 19:04:14 2020
 
-@author: Thais Helena
+@author: Vander Xavier
 """
 import random
 
