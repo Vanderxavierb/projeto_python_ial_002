@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul  6 17:05:06 2020
-
-@author: Vander Xavier
-"""
-
-""" Exercício 4 - Projeto_Ial - com todos os requisitos bônus"""
+# Fatec São Paulo, Curso ADS Noturno, 1º / 2020.
+# IAL 002: Projeto Programa nº4
+# Entrega 13/07/2020
+#
+# 20100711 Eugenio Dalle Olle
+# 20119491 Vitor Macedo de Medeiros
+# 20118320 Vanderson Xavier Barbosa
 
 
 
@@ -18,7 +17,9 @@ import random
 from random import randint
 
 
-#função gera linha com codigo do produto, quantidade de vendas, preço e icms
+#função gera linha com codigo do produto, quantidade de vendas, preço e icms 
+#levando em consideração os requisitos solicitados no problemas
+
 def gerador_de_venda():
     
     icms = [["São Paulo", 18],["Sudeste e Sul",12],
@@ -217,14 +218,14 @@ def registro_de_vendas(x,y):
             
     
             
-# Função para iniciar o programa 
+# Função para iniciar o programa - Recebe a quantidade de vendas e gera o arquivo de saída.
 def relatorio():   
     
     print("***************RELATÓRIO DE VENDAS***************")
     qtde_vendas_dia = int(input("Informe a Quantidade Diária de Vendas:"))
     datas_vendas = periodo_de_vendas()
     registro_arquivo = registro_de_vendas(datas_vendas,qtde_vendas_dia)   
-    arquivo = open("gravacao.txt", "w")
+    arquivo = open("relatorio.txt", "w")
     for n in registro_arquivo:
         n[2],n[0] = n[0],n[2]
         arquivo.write("{};{:02d};{:02d};{};{};{};{};{};\n".format(n[0],n[1],n[2],
