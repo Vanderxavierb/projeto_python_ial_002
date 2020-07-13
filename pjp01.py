@@ -1,17 +1,34 @@
-arquivo = open("ALUNOS.txt", "r")
-s = arquivo.readline()
-print("Matrícula Nome do aluno            Média Final Situação")
-
-while s != "":  # Laço para ler os dados do arquivo "alunos.txt"
-    s = s.rstrip()
-    s = s.split(";")
-    nome = s[4]  # Leitura do nome do aluno
-    media = (4 * float(s[1]) + 4 * float(s[2]) + 2 * float(s[3]))/10
-    media = round(media, 1)
-    if media >= 6.0:  # Avaliação das notas atribuídas conforme o cálculo da média
-        situacao = "Aprovado"
+Dados = []
+arq = open("ALUNOS.txt", "r")
+info = arq.readline()
+print("\n") 
+print("                                         Média")
+print(" Matrícula " +
+	" Nome do Aluno      " +
+	"          Final " + 
+	"    Situação")
+                         
+while info != '':
+    info = info.rstrip()
+    info = info.split(";")
+    matricula = int(info[0])
+    nota_P1 = float(info[1])
+    nota_P2 = float(info[2])
+    nota_MT = float(info[3])
+    nome = info[4]
+    Dados.append(tuple(info))
+    
+    MF = (4 * nota_P1 + 4 * nota_P2 + 2 * nota_MT) / 10
+    if MF >= 5.9 and MF < 6.0:
+	    MF = 6.0
+	    
+    MF_modificada = round(MF, 1)
+    if MF_modificada >= 6.0:
+	    situacao = 'Aprovado'		
+	    print(f'{matricula:10}  {nome:27}  {MF_modificada:4}      {situacao}')
     else:
-        situacao = "Reprovado"
-    print(f'{s[0]} {s[4]:25} {media:5}      {situacao:15}')
-    s = arquivo.readline()  # Leitura da próxima linha do arquivo
-arquivo.close()
+	    situacao = 'Reprovado'
+	    print(f'{matricula:10}  {nome:27}  {MF_modificada:4}      {situacao}')
+    info = arq.readline()
+arq.close()
+
