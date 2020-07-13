@@ -23,7 +23,7 @@ from random import randint
 def gerador_de_venda():
     
     icms = [["São Paulo", 18],["Sudeste e Sul",12],
-            ["Zona France de Manaus",0],["Demais UFs",7]]
+            ["Zona Franca de Manaus",0],["Demais UFs",7]]
         
     
     descricao_produtos = []
@@ -118,7 +118,7 @@ def periodo_de_vendas():
     
     data_valida = False
     while data_valida == False:
-        print("Informe a Data Inicial.")
+        print("\nInforme a Data Inicial.")
         data_inicial = coleta_datas()
         d_i = date(data_inicial[2],data_inicial[1],data_inicial[0])
         if d_i > hoje:
