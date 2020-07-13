@@ -63,7 +63,7 @@ def gerador_de_venda():
         preco = descricao_produtos[codigo][3] + descricao_produtos[codigo][3]*(descricao_produtos[codigo][4]/100)
         vendas.append("{:.3f}".format(quantidade_vendida))
         diferenca = randint(1,100)
-        if diferenca > 35:         
+        if diferenca > 35:         # Início do bloco que calcula a variação de 35% das vendas com desconto ou acréscimo
             vendas.append("{:.2f}".format(preco))
         else:
             desconto = randint(-8,8)
