@@ -137,6 +137,9 @@ def SenhaAluno ():
         Tipo = input("Informe a letra correspondente ao tipo de senha:")
         
     Tamanho = int(input("Informe o tamanho da senha a ser gerada:"))
+    while Tamanho <= 0:
+        print("Entrada Inválida")
+        Tamanho = int(input("Informe o tamanho da senha a ser gerada:"))
         
     matriculas = Leitura_Matriculas()
     
